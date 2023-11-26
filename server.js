@@ -31,8 +31,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
 
+// async..await 
 app.get('/test', async(req, res) => {
   const test = await db.collection('data').find().toArray()
   console.log(test)
   res.send('DB내용')
-})
+});
